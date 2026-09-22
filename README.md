@@ -1,10 +1,10 @@
 <div align="center">
 
-# Codebase Brain
+# Codeneura
 
 ### Know what you'll break — before you break it.
 
-**pip install codebase-brain**
+**pip install codeneura**
 
 </div>
 
@@ -18,7 +18,7 @@ You didn't write careless code. You just don't have the mental model anymore —
 
 This happens to every developer using Cursor, Claude Code, or Copilot right now. Most people haven't said it out loud yet, because it sounds a little paranoid. It isn't. It's just what happens when code moves faster than the human reviewing it can build intuition for it.
 
-**Codebase Brain is the fix for that specific moment.**
+**Codeneura is the fix for that specific moment.**
 
 It's a git hook — the kind that fires automatically every time you type `git commit`, before the commit actually happens. It maps your entire codebase as a dependency graph, and the second you try to commit something risky, it stops you, shows you exactly which files are affected, and — using AI — explains in plain English *why* it matters and what to actually check. Not a list of filenames. An explanation, the way a senior developer glancing over your shoulder would give you one.
 
@@ -54,7 +54,7 @@ This isn't a cherry-picked toy example. CPython is one of the most scrutinized c
 ### Here's what it looks like on your machine, in order
 
 ```bash
-pip install codebase-brain
+pip install Codeneura
 brain init          # pick an AI provider once — Groq, OpenAI, Anthropic, Google, or fully local Ollama
 brain start         # builds the dependency graph for whatever project you're standing in
 brain install-hook  # wires Brain into git — this is the step that actually matters
@@ -84,7 +84,7 @@ You want to actually see the shape of your project → run `brain start`, then o
 
 Every month, more of what you ship was written faster than you can fully hold in your head. That trade — speed for situational awareness — isn't going away, and it isn't something willpower fixes. You can't force yourself to slow down and trace every diff by hand; that defeats the reason you're using these tools in the first place.
 
-What actually works is something that holds the situational awareness *for* you, automatically, the moment it matters, without asking you to change how you work. That's the whole bet behind Codebase Brain: not making you more careful, but making the codebase itself tell you when to be.
+What actually works is something that holds the situational awareness *for* you, automatically, the moment it matters, without asking you to change how you work. That's the whole bet behind Codeneura: not making you more careful, but making the codebase itself tell you when to be.
 
 ---
 
@@ -92,7 +92,7 @@ What actually works is something that holds the situational awareness *for* you,
 
 This isn't a sixty-command structural query engine with dead-code detection and architectural layer inference — if that's what you're after, there are tools built specifically for that, and they do it well.
 
-Codebase Brain does one thing, on purpose: it catches you at the moment right before you commit, and it explains why, in a sentence you don't need documentation to understand.
+Codeneura does one thing, on purpose: it catches you at the moment right before you commit, and it explains why, in a sentence you don't need documentation to understand.
 
 ---
 
@@ -101,7 +101,7 @@ Codebase Brain does one thing, on purpose: it catches you at the moment right be
 
 ```bash
 brain uninstall     # removes Brain from the current project cleanly
-pip uninstall codebase-brain
+pip uninstall codeneura
 ```
 
 ---
@@ -109,6 +109,6 @@ pip uninstall codebase-brain
 <div align="center">
 
 Built by a solo, non-technical founder, with AI as the only co-builder.
-Found a false positive? [Open an issue](https://github.com/guruvarpatel-ai/codebase-brain/issues) — every report makes the risk engine sharper for everyone using it.
+Found a false positive? [Open an issue](https://github.com/guruvarpatel-ai/codeneura/issues) — every report makes the risk engine sharper for everyone using it.
 
 </div>
