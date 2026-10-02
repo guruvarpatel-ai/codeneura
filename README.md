@@ -108,7 +108,6 @@ pip uninstall codeneura
 
 <div align="center">
 
-Built by a solo, non-technical founder, with AI as the only co-builder.
 Found a false positive? [Open an issue](https://github.com/guruvarpatel-ai/codeneura/issues) — every report makes the risk engine sharper for everyone using it.
 
 </div>
