@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 
 
 def get_config():
-    """Load from local .env first, then global ~/.codebase-brain/config.env"""
+    """Load from local .env first, then global ~/.codeneura/config.env"""
     local_env = os.path.join(os.getcwd(), '.env')
     if os.path.exists(local_env):
         load_dotenv(local_env, override=True)
@@ -11,7 +11,7 @@ def get_config():
     has_key = os.getenv("LLM_API_KEY") or os.getenv("GROQ_API_KEY")
 
     if not has_key:
-        global_config = os.path.expanduser("~/.codebase-brain/config.env")
+        global_config = os.path.expanduser("~/.codeneura/config.env")
         if os.path.exists(global_config):
             load_dotenv(global_config, override=True)
 

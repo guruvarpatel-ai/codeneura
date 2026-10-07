@@ -21,7 +21,7 @@ import os
 # ... rest of your existing imports
 
 def cmd_start(path):
-    print(" Codebase Brain starting...")
+    print(" Codeneura starting...")
     print(f" Reading codebase at: {path}")
     brain = walk_codebase(path)
     save_brain(brain)
@@ -195,7 +195,7 @@ def cmd_impact(filepath=None, staged=False, block=False):
                 except EOFError:
                     confirm = 'yes'
             if confirm != 'yes':
-                print("\nCommit blocked by Codebase Brain.")
+                print("\nCommit blocked by Codeneura.")
                 sys.exit(1)
             else:
                 print("Override confirmed. Committing anyway.")
@@ -216,8 +216,8 @@ def install_hook(repo_path="."):
         return
 
     hook_script = """#!/bin/sh
-    # Codebase Brain — Pre-commit Impact Check
-    # https://github.com/guruvarpatel-ai/codebase-brain
+    # Codeneura — Pre-commit Impact Check
+    # https://github.com/guruvarpatel-ai/codeneura
 
     STAGED=$(git diff --name-only --cached)
 
@@ -226,14 +226,14 @@ def install_hook(repo_path="."):
     fi
 
     echo ""
-    echo "Codebase Brain — Checking blast radius..."
+    echo "Codeneura — Checking blast radius..."
     echo ""
 
     brain impact --staged --block
     EXIT_CODE=$?
 
     echo ""
-    echo "Powered by Codebase Brain"
+    echo "Powered by Codeneura ("
     echo ""
 
     exit $EXIT_CODE
@@ -250,10 +250,10 @@ def install_hook(repo_path="."):
 
 def cmd_init():
     import os
-    print("Initializing Codebase Brain...\n")
+    print("Initializing Codeneura...\n")
 
     # global config — stored once per machine
-    config_dir = os.path.expanduser("~/.codebase-brain")
+    config_dir = os.path.expanduser("~/.codeneura")
     os.makedirs(config_dir, exist_ok=True)
     config_path = os.path.join(config_dir, "config.env")
 
@@ -354,10 +354,10 @@ def cmd_rootcause(error_text=None):
 def cmd_uninstall():
     import shutil
 
-    print("Uninstalling Codebase Brain...\n")
+    print("Uninstalling Codeneura...\n")
 
     # remove global config
-    config_dir = os.path.expanduser("~/.codebase-brain")
+    config_dir = os.path.expanduser("~/.codeneura")
     if os.path.exists(config_dir):
         shutil.rmtree(config_dir)
         print("Removed global config.")
@@ -380,17 +380,17 @@ def cmd_uninstall():
         # only remove if it's a Brain hook
         with open(hook_path, 'r') as f:
             content = f.read()
-        if 'Codebase Brain' in content:
+        if 'Codeneura' in content:
             os.remove(hook_path)
             print("Removed git hook.")
 
-    print("\nBrain removed from this project.")
-    print("To fully uninstall: pip uninstall codebase-brain")
+    print("\nCodeneura removed from this project.")
+    print("To fully uninstall: pip uninstall codeneura")
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Codebase Brain - AI layer over your codebase"
+        description="Codeneura - Know what you'll break — before you break it."
     )
     # ← "install-hook" added here
     parser.add_argument("--path", default=".", help="Path to codebase")
